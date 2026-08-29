@@ -22,5 +22,5 @@ jobs:
       - name: output info
         env:
           MY_SECRET: ${{ secrets.some-secret }}
-        run: echo "deploy...............< ${{ secrets.some-secret }} `${#MY_SECRET} symbols`"
+        run: echo "deploy...............< ${{ secrets.some-secret }} (${#MY_SECRET} symbols)"
 
