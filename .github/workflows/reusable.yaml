@@ -9,8 +9,14 @@ on:
     secrets:
       some-secret:
         required: false
+    outputs:
+      result:
+        description: Result of the reusable WF
+        value: ${{ jobs.deploy_r.outputs.outcome }}
 jobs:
   deploy_r:
+    outputs:
+      outcome: ${{ steps.set-result.outputs.step_res }}
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -23,4 +29,7 @@ jobs:
         env:
           MY_SECRET: ${{ secrets.some-secret }}
         run: echo "deploy...............< ${{ secrets.some-secret }} (${#MY_SECRET} symbols)"
+      - name: Set result output
+        id: set-result
+        run: echo "step_res=GOOD" >> $GITHUB_OUTPUTS"
 
