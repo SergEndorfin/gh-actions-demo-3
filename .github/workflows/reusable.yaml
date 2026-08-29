@@ -1,8 +1,8 @@
 name: reusable deploy
 on: workflow_call
 jobs:
-  deploy:
+  deploy_r:
     runs-on: ubuntu-latest
     steps:
       - name: output info
-        run: echo "deploy..............."
+        run: echo "deploy...............<"
