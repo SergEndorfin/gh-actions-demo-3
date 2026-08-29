@@ -6,6 +6,9 @@ on:
         description: The name of the deployable artifact files
         default: dist
         type: string
+    secrets:
+      some-secret:
+        required: false
 jobs:
   deploy_r:
     runs-on: ubuntu-latest
