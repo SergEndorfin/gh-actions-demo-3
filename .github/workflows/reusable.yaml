@@ -20,5 +20,7 @@ jobs:
       - name: List files
         run: ls
       - name: output info
-        run: echo "deploy...............< ${{ secrets.some-secret }} `${{ stringLength(secrets.some-secret) }} symbols`"
+        env:
+          MY_SECRET: ${{ secrets.some-secret }}
+        run: echo "deploy...............< ${{ secrets.some-secret }} `${#MY_SECRET} symbols`"
 
