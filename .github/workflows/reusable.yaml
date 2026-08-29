@@ -31,5 +31,5 @@ jobs:
         run: echo "deploy...............< ${{ secrets.some-secret }} (${#MY_SECRET} symbols)"
       - name: Set result output
         id: set-result
-        run: echo "step_res=GOOD" >> $GITHUB_OUTPUTS"
+        run: echo "step_res=GOOD" >> $GITHUB_OUTPUTS
 
